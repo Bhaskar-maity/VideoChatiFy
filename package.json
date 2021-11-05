@@ -1,0 +1,11 @@
+{
+  "name": "videochatify",
+  "version": "1.0.0",
+  "description": "Video Chatting App\u001b[D\u001b[D\u001b[DWeb App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
