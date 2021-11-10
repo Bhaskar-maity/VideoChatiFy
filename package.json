@@ -4,10 +4,12 @@
   "description": "Video Chatting Web App",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Bhaskar, Proshanta, Rupam, Arushi",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
