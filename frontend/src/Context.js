@@ -4,7 +4,7 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("https://videochatify4322.netlify.app/");
+const socket = io("https://video-chatify234.herokuapp.com/");
 
 const ContextProvider = ({ children }) => {
    const [callAccepted, setCallAccepted] = useState(false);
