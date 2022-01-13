@@ -1,23 +1,33 @@
 import React, { useContext } from "react";
-import { Button } from "@material-ui/core";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { SocketContext } from "../Context";
 
 const Notifications = () => {
-   const { answerCall, call, callAccepted } = useContext(SocketContext);
+  const { answerCall, call, callAccepted } = useContext(SocketContext);
 
-   return (
-      <>
-         {call.isReceivingCall && !callAccepted && (
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-               <h1>{call.name} is calling:</h1>
-               <Button variant="contained" color="primary" onClick={answerCall}>
-                  Answer
-               </Button>
-            </div>
-         )}
-      </>
-   );
+  const notify = (name) => {
+    toast.info(`${name} is calling you!`, {
+      position: "top-right",
+      autoClose: false,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+    });
+  };
+
+  if (call.isReceivingCall && !callAccepted) {
+    notify(call.name);
+    return (
+      <div onClick={answerCall}>
+        <ToastContainer theme="colored" />
+      </div>
+    );
+  }
+  return null;
 };
 
 export default Notifications;
